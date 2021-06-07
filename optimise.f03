@@ -6,16 +6,17 @@ program optimise
     real :: phi ! [radians]
     real :: alpha = 5 ! [degrees] 
     real :: tsr = 4.5
-    real :: radius = 0.3 ! [metres]
+    real :: radius = 1 ! [metres]
     real :: omega ! [rad/s]
     real :: windspeed ! [m/s]
     real :: tsrLocal
     real :: loc ! [metres]
     real :: chord ! [metres]
     real :: coefficientLift
+    real :: rotorSolidity
     real, dimension(100) :: a,cl
     integer :: arrayLength = size(cl)
-    integer :: bladeNumber = 3
+    integer :: bladeNumber = 2
     integer :: i
     integer :: j
     integer :: optimisationStations = 5
@@ -47,8 +48,14 @@ program optimise
         end do 
 
         chord = (16*3.1415*loc)/(real(bladeNumber)*coefficientLift)*(sin(0.33333*atan(radius/(tsr*loc))))**2
+
+        rotorSolidity = (chord*bladeNumber)/(2*3.1415*loc)
+
+        if (rotorSolidity > 1) then
+            print*,'Warning rotor solidity is greater then one, manual manipulation of the chord is recommended at position;',i
+        end if
+
         write(unit=3,fmt=2) loc, beta, chord
-        print *, loc, beta, chord, coefficientLift
     end do
 
     close(unit=3)

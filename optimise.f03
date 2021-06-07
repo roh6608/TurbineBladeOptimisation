@@ -12,13 +12,13 @@ program optimise
     real :: tsrLocal
     integer :: station
     integer :: optimisationStations = 5
-
+    
     do station=1,optimisationStations
         omega = (tsr*windSpeed)/((radius/optimisationStations)*station)
         tsrLocal = omega*(radius)/(optimisationStations)*station/(windSpeed)
-        phi = atan(1/tsrLocal*2/3)
+        phi = atan(0.017453*(1/tsrLocal*2/3))
         beta = phi - alpha
-        print *, station, alpha
+        print *, station, beta
     end do
 
 

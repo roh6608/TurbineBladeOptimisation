@@ -35,6 +35,13 @@ Where; ```bladeNumber``` is the number of blades and ```fileName``` is the file 
 
 Where; the left column is the angle of attack in degrees, and the right column is the coefficient of lift.
 
+## Compiling
+The optimise.f03 file is compiled using gfortran as shown in the below example.
+
+```
+gfortran optimise.f03 -o optimise
+```
+
 ## Output
 The output of the optimised blade geometry is in the dat file named output.dat. The format of the file is shown in the example below.
 

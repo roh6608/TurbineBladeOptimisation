@@ -42,12 +42,13 @@ program optimise
         do j=1,arrayLength
             if (a(j) > beta) then
                     coefficientLift = cl(j)
+                    exit 
             end if
-        end do
+        end do 
 
         chord = (16*3.1415*loc)/(real(bladeNumber)*coefficientLift)*(sin(0.33333*atan(radius/(tsr*loc))))**2
         write(unit=3,fmt=2) loc, beta, chord
-        print *, loc, phi*57.296, chord
+        print *, loc, beta, chord, coefficientLift
     end do
 
     close(unit=3)

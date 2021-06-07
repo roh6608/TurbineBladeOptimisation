@@ -16,18 +16,34 @@ Where; ```alpha``` is the angle of attack that the aerofoil performs best at, th
 The variables that can be changed for the optimisation are shown below.
 
 ```fortran
+integer :: bladeNumber
+character(len=20) :: fileName
+```
+Where; ```bladeNumber``` is the number of blades and ```fileName``` is the file name of the aerofoil polar for the blade, this polar must of the format shown in the example below.
 
 ```
+  -5.000  -0.5702
+  -4.750  -0.5472
+  -4.500  -0.5014
+  -4.250  -0.4879
+  -4.000  -0.4684
+  -3.750  -0.4281
+  -3.500  -0.4129
+  -3.250  -0.3693
+  -3.000  -0.3623
+```
+
+Where; the left column is the angle of attack in degrees, and the right column is the coefficient of lift.
 
 ## Output
 The output of the optimised blade geometry is in the dat file named output.dat. The format of the file is shown in the example below.
 
 ```
-0.060       8.0     0.081
-0.120      -8.2     0.061
-0.180     -14.6     0.045
-0.240     -18.0     0.035
-0.300     -20.1     0.028
+   0.060         31.5        0.121
+   0.120         15.3        0.090
+   0.180          8.9        0.067
+   0.240          5.5        0.052
+   0.300          3.4        0.042
 
 ```
 

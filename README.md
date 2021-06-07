@@ -27,4 +27,4 @@ The output of the optimised blade geometry is in the dat file named output.dat. 
 
 ```
 
-The left column is the position along the blade in metres, the centre column is the optimised angle of attack of the blade and the right column is the optimised chord of the blade. Each value takes up a width of 5 and has 2 decimal places. The space between values is also 5.
+The left column is the position along the blade in metres, the centre column is the optimised angle of attack of the blade in degrees and the right column is the optimised chord of the blade in metres. Each value takes up a width of 5 and has 2 decimal places. The space between values is also 5.

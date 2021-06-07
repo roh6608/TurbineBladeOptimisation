@@ -19,8 +19,9 @@ program optimise
     integer :: i
     integer :: j
     integer :: optimisationStations = 5
+    character(len = 20) :: fileName = 'test.dat'
     
-    open(unit=1,file='test.dat')
+    open(unit=1,file=fileName)
 
     do i = 1,arrayLength
         read(1,*,end=4) a(i),cl(i)
